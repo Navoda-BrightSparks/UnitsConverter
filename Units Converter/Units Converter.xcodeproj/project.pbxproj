@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		43124765211F3F4B00531BA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43124764211F3F4B00531BA4 /* AppDelegate.swift */; };
-		43124767211F3F4B00531BA4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43124766211F3F4B00531BA4 /* FirstViewController.swift */; };
-		43124769211F3F4B00531BA4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43124768211F3F4B00531BA4 /* SecondViewController.swift */; };
+		43124767211F3F4B00531BA4 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43124766211F3F4B00531BA4 /* TemperatureViewController.swift */; };
+		43124769211F3F4B00531BA4 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43124768211F3F4B00531BA4 /* WeightViewController.swift */; };
 		4312476C211F3F4B00531BA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4312476A211F3F4B00531BA4 /* Main.storyboard */; };
 		4312476E211F3F4C00531BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4312476D211F3F4C00531BA4 /* Assets.xcassets */; };
 		43124771211F3F4C00531BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4312476F211F3F4C00531BA4 /* LaunchScreen.storyboard */; };
+		4312477E2120A00A00531BA4 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312477D2120A00A00531BA4 /* DistanceViewController.swift */; };
+		431247802120A01800531BA4 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312477F2120A01800531BA4 /* SpeedViewController.swift */; };
+		431247822120A31F00531BA4 /* UnitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431247812120A31F00531BA4 /* UnitModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43124761211F3F4B00531BA4 /* Units Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Units Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43124764211F3F4B00531BA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43124766211F3F4B00531BA4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		43124768211F3F4B00531BA4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		43124766211F3F4B00531BA4 /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
+		43124768211F3F4B00531BA4 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		4312476B211F3F4B00531BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4312476D211F3F4C00531BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43124770211F3F4C00531BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43124772211F3F4C00531BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4312477D2120A00A00531BA4 /* DistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
+		4312477F2120A01800531BA4 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
+		431247812120A31F00531BA4 /* UnitModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		43124763211F3F4B00531BA4 /* Units Converter */ = {
 			isa = PBXGroup;
 			children = (
-				43124764211F3F4B00531BA4 /* AppDelegate.swift */,
-				43124766211F3F4B00531BA4 /* FirstViewController.swift */,
-				43124768211F3F4B00531BA4 /* SecondViewController.swift */,
-				4312476A211F3F4B00531BA4 /* Main.storyboard */,
+				4312477C21209FD200531BA4 /* Delegates */,
+				4312477B21209FCA00531BA4 /* StoryBoards */,
+				4312477A21209FC300531BA4 /* Models */,
+				4312477921209FBB00531BA4 /* Services */,
+				4312477821209FAC00531BA4 /* Controllers */,
 				4312476D211F3F4C00531BA4 /* Assets.xcassets */,
-				4312476F211F3F4C00531BA4 /* LaunchScreen.storyboard */,
 				43124772211F3F4C00531BA4 /* Info.plist */,
 			);
 			path = "Units Converter";
+			sourceTree = "<group>";
+		};
+		4312477821209FAC00531BA4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43124768211F3F4B00531BA4 /* WeightViewController.swift */,
+				43124766211F3F4B00531BA4 /* TemperatureViewController.swift */,
+				4312477D2120A00A00531BA4 /* DistanceViewController.swift */,
+				4312477F2120A01800531BA4 /* SpeedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4312477921209FBB00531BA4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4312477A21209FC300531BA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				431247812120A31F00531BA4 /* UnitModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4312477B21209FCA00531BA4 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				4312476F211F3F4C00531BA4 /* LaunchScreen.storyboard */,
+				4312476A211F3F4B00531BA4 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		4312477C21209FD200531BA4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				43124764211F3F4B00531BA4 /* AppDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43124769211F3F4B00531BA4 /* SecondViewController.swift in Sources */,
+				43124769211F3F4B00531BA4 /* WeightViewController.swift in Sources */,
+				431247802120A01800531BA4 /* SpeedViewController.swift in Sources */,
+				4312477E2120A00A00531BA4 /* DistanceViewController.swift in Sources */,
+				431247822120A31F00531BA4 /* UnitModels.swift in Sources */,
 				43124765211F3F4B00531BA4 /* AppDelegate.swift in Sources */,
-				43124767211F3F4B00531BA4 /* FirstViewController.swift in Sources */,
+				43124767211F3F4B00531BA4 /* TemperatureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
