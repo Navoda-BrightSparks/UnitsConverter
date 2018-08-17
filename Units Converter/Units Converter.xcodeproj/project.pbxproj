@@ -16,6 +16,7 @@
 		4312477E2120A00A00531BA4 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312477D2120A00A00531BA4 /* DistanceViewController.swift */; };
 		431247802120A01800531BA4 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312477F2120A01800531BA4 /* SpeedViewController.swift */; };
 		431247822120A31F00531BA4 /* UnitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431247812120A31F00531BA4 /* UnitModels.swift */; };
+		435FDAB021245DDE009F519F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435FDAAF21245DDE009F519F /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4312477D2120A00A00531BA4 /* DistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		4312477F2120A01800531BA4 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		431247812120A31F00531BA4 /* UnitModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModels.swift; sourceTree = "<group>"; };
+		435FDAAF21245DDE009F519F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				431247812120A31F00531BA4 /* UnitModels.swift */,
+				435FDAAF21245DDE009F519F /* Enums.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				431247802120A01800531BA4 /* SpeedViewController.swift in Sources */,
 				4312477E2120A00A00531BA4 /* DistanceViewController.swift in Sources */,
 				431247822120A31F00531BA4 /* UnitModels.swift in Sources */,
+				435FDAB021245DDE009F519F /* Enums.swift in Sources */,
 				43124765211F3F4B00531BA4 /* AppDelegate.swift in Sources */,
 				43124767211F3F4B00531BA4 /* TemperatureViewController.swift in Sources */,
 			);

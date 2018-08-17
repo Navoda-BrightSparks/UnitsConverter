@@ -10,6 +10,8 @@ import UIKit
 
 class DistanceViewController: UIViewController {
 
+    
+    @IBOutlet weak var distanceView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
