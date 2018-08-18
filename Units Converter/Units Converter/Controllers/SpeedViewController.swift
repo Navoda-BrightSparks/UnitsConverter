@@ -8,28 +8,198 @@
 
 import UIKit
 
-class SpeedViewController: UIViewController {
+class SpeedViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var milesPerHourTextField: UITextField!
+    @IBOutlet weak var kiloPHourTextField: UITextField!
+    @IBOutlet weak var feetPMinTextField: UITextField!
+    @IBOutlet weak var metrePerSecTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //delegates
+        milesPerHourTextField.delegate = self
+        kiloPHourTextField.delegate = self
+        feetPMinTextField.delegate = self
+        metrePerSecTextField.delegate = self
+        // add tap GestureRecognizer
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SpeedViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        //add done button to keyboard
+        self.addDoneButtonOnKeyboard()
+        //set up text fileds for change event
+        setUpTextFields()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //Set up textFields for controll events{
+    func setUpTextFields(){
+        milesPerHourTextField.addTarget(self, action: #selector(milesPerHourTextFieldEditingDidChange), for: UIControlEvents.editingChanged)
+        kiloPHourTextField.addTarget(self, action: #selector(kiloPHourTextFieldEditingDidChange), for: UIControlEvents.editingChanged)
+        feetPMinTextField.addTarget(self, action: #selector(feetPMinTextFieldEditingDidChange), for: UIControlEvents.editingChanged)
+        metrePerSecTextField.addTarget(self, action: #selector(metrePerSecTextFieldEditingDidChange), for: UIControlEvents.editingChanged)
     }
-    */
-
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    //when tap return  key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    //add done button to keyboard
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle       = UIBarStyle.default
+        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(SpeedViewController.doneButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.milesPerHourTextField.inputAccessoryView = doneToolbar
+        self.kiloPHourTextField.inputAccessoryView = doneToolbar
+        self.metrePerSecTextField.inputAccessoryView = doneToolbar
+        self.feetPMinTextField.inputAccessoryView = doneToolbar
+        
+        
+    }
+    
+    //gram Textfield editing change  event
+    @objc private func milesPerHourTextFieldEditingDidChange(_ textField: UITextField) {
+        if textField.text != nil && textField.text != "" {
+            let text =  textField.text
+            let Doublevalue = Double("\(text!)")
+            
+            convertValue(Value: Doublevalue!, selectedType: SpeedTypes.milePerHour.type())
+        }
+        else{
+            clearFields()
+        }
+    }
+    //kilo Textfield editing change  event
+    @objc private func kiloPHourTextFieldEditingDidChange(_ textField: UITextField) {
+        if textField.text != nil && textField.text != "" {
+            let text =  textField.text
+            let Doublevalue = Double("\(text!)")
+            
+            convertValue(Value: Doublevalue!, selectedType: SpeedTypes.kiloPerHour.type())
+        }
+        else{
+            clearFields()
+        }
+    }
+    //ounce Textfield editing change  event
+    @objc private func feetPMinTextFieldEditingDidChange(_ textField: UITextField) {
+        if textField.text != nil && textField.text != "" {
+            let text =  textField.text
+            let Doublevalue = Double("\(text!)")
+            
+            convertValue(Value: Doublevalue!, selectedType: SpeedTypes.feetPerMin.type())
+        }
+        else{
+            clearFields()
+        }
+    }
+    //pound Textfield editing change  event
+    @objc private func metrePerSecTextFieldEditingDidChange(_ textField: UITextField) {
+        if textField.text != nil && textField.text != "" {
+            let text =  textField.text
+            let Doublevalue = Double("\(text!)")
+            
+            convertValue(Value: Doublevalue!, selectedType:SpeedTypes.metrePerSec.type())
+        }
+        else{
+            clearFields()
+        }
+    }
+    //unit convertion
+    func convertValue(Value:Double,selectedType:String){
+        var speeds = SpeedModel(metrePerSec: 0.00, kiloPerHour: 0.00, feetPerMin: 0.00, milePerHour: 0.00)
+        if(selectedType == SpeedTypes.feetPerMin.type() ){
+            speeds.feetPerMin = Value
+            speeds = speeds.convert(selectedUnitType:selectedType)
+            kiloPHourTextField.text = SetupDecimalPaces(speeds.kiloPerHour)
+            metrePerSecTextField.text = SetupDecimalPaces(speeds.metrePerSec)
+            milesPerHourTextField.text = SetupDecimalPaces(speeds.milePerHour)
+            
+        }
+        else if(selectedType == SpeedTypes.metrePerSec.type()  ){
+            speeds.metrePerSec = Value
+            speeds = speeds.convert(selectedUnitType:selectedType)
+            kiloPHourTextField.text = SetupDecimalPaces(speeds.kiloPerHour)
+            milesPerHourTextField.text = SetupDecimalPaces(speeds.milePerHour)
+            feetPMinTextField.text = SetupDecimalPaces(speeds.feetPerMin)
+            
+        }
+        else  if(selectedType == SpeedTypes.kiloPerHour.type()  ){
+            speeds.kiloPerHour = Value
+            speeds = speeds.convert(selectedUnitType:selectedType)
+            milesPerHourTextField.text = SetupDecimalPaces(speeds.milePerHour)
+            feetPMinTextField.text = SetupDecimalPaces(speeds.feetPerMin)
+            metrePerSecTextField.text = SetupDecimalPaces(speeds.metrePerSec)
+            
+        }
+        else{
+            speeds.milePerHour = Value
+            speeds = speeds.convert(selectedUnitType:selectedType)
+            feetPMinTextField.text = SetupDecimalPaces(speeds.feetPerMin)
+            kiloPHourTextField.text = SetupDecimalPaces(speeds.kiloPerHour)
+            metrePerSecTextField.text = SetupDecimalPaces(speeds.metrePerSec)
+        }
+        
+        
+    }
+    //clear text fields
+    func clearFields(){
+        
+        self.milesPerHourTextField.text = ""
+        self.kiloPHourTextField.text = ""
+        self.metrePerSecTextField.text = ""
+        self.feetPMinTextField.text = ""
+    }
+    
+    //when textfield begin editing clear textfield values
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        clearFields()
+    }
+    
+    //when tap done button
+    @objc func doneButtonAction() {
+        self.milesPerHourTextField.resignFirstResponder()
+        self.kiloPHourTextField.resignFirstResponder()
+        self.metrePerSecTextField.resignFirstResponder()
+        self.feetPMinTextField.resignFirstResponder()
+        
+    }
+    //if textfield value is large convert to e notation
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        if textField.text != nil && textField.text != "" {
+            let text =  textField.text
+            let Doublevalue = Double("\(text!)")
+            if(!(Doublevalue?.isLessThanOrEqualTo(10000000))!){
+                
+                
+                textField.text = formatLargeNumbers(value: Doublevalue!)
+            }
+            
+        }
+        
+    }
 }

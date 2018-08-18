@@ -84,7 +84,7 @@ class WeightViewController: UIViewController,UITextFieldDelegate {
         
         
     }
-    
+
     //gram Textfield editing change  event
     @objc private func gramTextFieldEditingDidChange(_ textField: UITextField) {
         if textField.text != nil && textField.text != "" {
@@ -139,33 +139,33 @@ class WeightViewController: UIViewController,UITextFieldDelegate {
         if(selectedType == WeightTypes.Pound.type() ){
             weights.pound = Value
             weights = weights.convert(selectedUnitType:selectedType)
-            kgTextField.text = "\(String(format: "%.2f", weights.kilogram))"
-            ounceTextField.text = "\(String(format: "%.2f", weights.ounce))"
-            gramTextField.text = "\(String(format: "%.2f", weights.gram))"
+            kgTextField.text = SetupDecimalPaces(weights.kilogram)
+            ounceTextField.text = SetupDecimalPaces(weights.ounce)
+            gramTextField.text = SetupDecimalPaces(weights.gram)
             
         }
         else if(selectedType == WeightTypes.Ounce.type() ){
             weights.ounce = Value
             weights = weights.convert(selectedUnitType:selectedType)
-            kgTextField.text = "\(String(format: "%.2f", weights.kilogram))"
-            gramTextField.text = "\(String(format: "%.2f", weights.gram))"
-            poundTextField.text = "\(String(format: "%.2f", weights.pound))"
+            kgTextField.text = SetupDecimalPaces(weights.kilogram)
+            gramTextField.text = SetupDecimalPaces(weights.gram)
+            poundTextField.text = SetupDecimalPaces(weights.pound)
             
         }
         else  if(selectedType == WeightTypes.Gram.type() ){
             weights.gram = Value
             weights = weights.convert(selectedUnitType:selectedType)
-            kgTextField.text = "\(String(format: "%.2f", weights.kilogram))"
-            ounceTextField.text = "\(String(format: "%.2f", weights.ounce))"
-            poundTextField.text = "\(String(format: "%.2f", weights.pound))"
+            kgTextField.text = SetupDecimalPaces(weights.kilogram)
+            ounceTextField.text = SetupDecimalPaces(weights.ounce)
+            poundTextField.text = SetupDecimalPaces(weights.pound)
             
         }
         else{
             weights.kilogram = Value
             weights = weights.convert(selectedUnitType:selectedType)
-            ounceTextField.text = "\(String(format: "%.2f", weights.ounce))"
-            gramTextField.text = "\(String(format: "%.2f", weights.gram))"
-            poundTextField.text = "\(String(format: "%.2f", weights.pound))"
+            ounceTextField.text = SetupDecimalPaces(weights.ounce)
+            gramTextField.text = SetupDecimalPaces(weights.gram)
+            poundTextField.text = SetupDecimalPaces(weights.pound)
         }
         
         
@@ -183,6 +183,20 @@ class WeightViewController: UIViewController,UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         clearFields()
     }
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        if textField.text != nil && textField.text != "" {
+            let text =  textField.text
+            let Doublevalue = Double("\(text!)")
+            if(!(Doublevalue?.isLessThanOrEqualTo(10000000))!){
+                
+                
+                textField.text = formatLargeNumbers(value: Doublevalue!)
+            }
+                
+            }
+        
+        }
+       
     
     //when tap done button
     @objc func doneButtonAction() {

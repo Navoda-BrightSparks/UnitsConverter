@@ -16,3 +16,19 @@ enum WeightTypes :String {
         
     }
 }
+enum TempTypes :String {
+    case Kelvin, Fahrenheit ,Celcius
+    
+    func type()->String{
+        return self.rawValue
+        
+    }
+}
+enum SpeedTypes :String {
+    case feetPerMin, milePerHour ,metrePerSec,kiloPerHour
+    
+    func type()->String{
+        return self.rawValue
+        
+    }
+}

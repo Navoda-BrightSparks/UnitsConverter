@@ -17,6 +17,7 @@
 		431247802120A01800531BA4 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312477F2120A01800531BA4 /* SpeedViewController.swift */; };
 		431247822120A31F00531BA4 /* UnitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431247812120A31F00531BA4 /* UnitModels.swift */; };
 		435FDAB021245DDE009F519F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435FDAAF21245DDE009F519F /* Enums.swift */; };
+		43778D0021279B6B00647E78 /* CommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43778CFF21279B6B00647E78 /* CommonMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4312477F2120A01800531BA4 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		431247812120A31F00531BA4 /* UnitModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModels.swift; sourceTree = "<group>"; };
 		435FDAAF21245DDE009F519F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		43778CFF21279B6B00647E78 /* CommonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		43124763211F3F4B00531BA4 /* Units Converter */ = {
 			isa = PBXGroup;
 			children = (
+				43778CFE21279B4D00647E78 /* Helpers */,
 				4312477C21209FD200531BA4 /* Delegates */,
 				4312477B21209FCA00531BA4 /* StoryBoards */,
 				4312477A21209FC300531BA4 /* Models */,
@@ -117,6 +120,14 @@
 				43124764211F3F4B00531BA4 /* AppDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		43778CFE21279B4D00647E78 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				43778CFF21279B6B00647E78 /* CommonMethods.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 				431247802120A01800531BA4 /* SpeedViewController.swift in Sources */,
 				4312477E2120A00A00531BA4 /* DistanceViewController.swift in Sources */,
 				431247822120A31F00531BA4 /* UnitModels.swift in Sources */,
+				43778D0021279B6B00647E78 /* CommonMethods.swift in Sources */,
 				435FDAB021245DDE009F519F /* Enums.swift in Sources */,
 				43124765211F3F4B00531BA4 /* AppDelegate.swift in Sources */,
 				43124767211F3F4B00531BA4 /* TemperatureViewController.swift in Sources */,
