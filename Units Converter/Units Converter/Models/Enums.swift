@@ -32,3 +32,11 @@ enum SpeedTypes :String {
         
     }
 }
+enum DistanceTypes :String {
+    case foot, mile ,metre,kilometre,yard
+    
+    func type()->String{
+        return self.rawValue
+        
+    }
+}

@@ -27,6 +27,7 @@ class TemperatureViewController: UIViewController,UITextFieldDelegate {
         self.addDoneButtonOnKeyboard()
         //set up text fileds for change event
         setUpTextFields()
+ 
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,7 +76,17 @@ class TemperatureViewController: UIViewController,UITextFieldDelegate {
         self.celciusTextField.inputAccessoryView = doneToolbar
         self.fahrenheitTextField.inputAccessoryView = doneToolbar
     }
-    
+  
+    // animation for the view
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
     //celsius Textfield editing change  event
     @objc private func celciusTextFieldEditingDidChange(_ textField: UITextField) {
         if textField.text != nil && textField.text != "" {
@@ -140,6 +151,20 @@ class TemperatureViewController: UIViewController,UITextFieldDelegate {
         
         
     }
+    //only allow decimal numbers
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        // Allow Only Valid Decimal Numbers
+        if let textFieldText = textField.text   {
+            
+            let finalText = (textFieldText as NSString).replacingCharacters(in: range, with: string)
+            if Double(finalText) != nil {
+                return true
+            }
+        }
+        return false
+    }
+    
     //clear text fields
     func clearFields(){
         
@@ -152,6 +177,9 @@ class TemperatureViewController: UIViewController,UITextFieldDelegate {
     //when textfield begin editing clear textfield values
     func textFieldDidBeginEditing(_ textField: UITextField) {
         clearFields()
+        if(UIDevice.current.modelName == "iPhone 5"   || UIDevice.current.modelName == "iPhone SE" || UIDevice.current.modelName == "iPhone 5s"){
+            self.animateViewMoving(up: true, moveValue: 50)
+        }
     }
     
     //when tap done button
@@ -167,14 +195,21 @@ class TemperatureViewController: UIViewController,UITextFieldDelegate {
         if textField.text != nil && textField.text != "" {
             let text =  textField.text
             let Doublevalue = Double("\(text!)")
-            if(!(Doublevalue?.isLessThanOrEqualTo(10000000))!){
-                
-                
-                textField.text = formatLargeNumbers(value: Doublevalue!)
+            if(UIDevice.current.modelName == "iPhone 5"   || UIDevice.current.modelName == "iPhone SE" || UIDevice.current.modelName == "iPhone 5s"){
+                if(!(Doublevalue?.isLessThanOrEqualTo(10000000))!){
+                    textField.text = formatLargeNumbers(value: Doublevalue!)
+                }
+            }
+            else {
+                if(!(Doublevalue?.isLessThanOrEqualTo(10000000000))!){
+                    textField.text = formatLargeNumbers(value: Doublevalue!)
+                }
             }
             
         }
-        
+        if(UIDevice.current.modelName == "iPhone 5"   || UIDevice.current.modelName == "iPhone SE" || UIDevice.current.modelName == "iPhone 5s"){
+            animateViewMoving(up: false, moveValue: 50)
+        }
     }
 }
 

@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="73" id="t69-HS-jKA"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fa-mp-v3c">
+                            <view contentMode="scaleToFill" restorationIdentifier="animateView" translatesAutoresizingMaskIntoConstraints="NO" id="8fa-mp-v3c">
                                 <rect key="frame" x="0.0" y="73" width="375" height="545"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y75-o8-T0Y">
@@ -46,7 +46,6 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pgo-m1-HJi">
                                         <rect key="frame" x="146" y="73" width="197" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilogram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1u-fG-ew7">
@@ -85,6 +84,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                     </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHn-AS-wlu">
+                                        <rect key="frame" x="0.0" y="477" width="375" height="68"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="68" id="x45-2b-cMt"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -93,11 +99,14 @@
                                     <constraint firstItem="e1u-fG-ew7" firstAttribute="centerY" secondItem="u2a-I2-0wR" secondAttribute="centerY" id="4vy-Tb-pZZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Vw5-77-Bss" secondAttribute="trailing" constant="32" id="5GW-Wt-awY"/>
                                     <constraint firstItem="05W-uE-FzE" firstAttribute="top" secondItem="u2a-I2-0wR" secondAttribute="bottom" constant="29" id="8ZM-4F-88S"/>
+                                    <constraint firstItem="uHn-AS-wlu" firstAttribute="leading" secondItem="8fa-mp-v3c" secondAttribute="leading" id="AN0-c9-e6B"/>
                                     <constraint firstItem="e1u-fG-ew7" firstAttribute="leading" secondItem="8fa-mp-v3c" secondAttribute="leading" constant="30" id="DX2-Gu-7Ng"/>
                                     <constraint firstAttribute="trailing" secondItem="u2a-I2-0wR" secondAttribute="trailing" constant="32" id="EjP-En-HMm"/>
                                     <constraint firstItem="VPl-vq-xL0" firstAttribute="centerY" secondItem="05W-uE-FzE" secondAttribute="centerY" id="HGR-e8-mQh"/>
                                     <constraint firstItem="Pgo-m1-HJi" firstAttribute="top" secondItem="8fa-mp-v3c" secondAttribute="top" constant="73" id="HWV-HL-3q4"/>
+                                    <constraint firstAttribute="trailing" secondItem="uHn-AS-wlu" secondAttribute="trailing" id="Kzh-Pd-Kfz"/>
                                     <constraint firstItem="7Jg-Lm-a16" firstAttribute="leading" secondItem="8fa-mp-v3c" secondAttribute="leading" constant="30" id="LNF-vO-RkE"/>
+                                    <constraint firstAttribute="bottom" secondItem="uHn-AS-wlu" secondAttribute="bottom" id="N5X-u4-NcR"/>
                                     <constraint firstItem="05W-uE-FzE" firstAttribute="leading" secondItem="VPl-vq-xL0" secondAttribute="trailing" constant="67" id="QAt-RR-QRF"/>
                                     <constraint firstItem="VPl-vq-xL0" firstAttribute="leading" secondItem="8fa-mp-v3c" secondAttribute="leading" constant="30" id="cQV-BQ-gI8"/>
                                     <constraint firstItem="7Jg-Lm-a16" firstAttribute="centerY" secondItem="Vw5-77-Bss" secondAttribute="centerY" id="gDb-lC-GD1"/>
@@ -133,6 +142,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="gramTextField" destination="Pgo-m1-HJi" id="7If-BJ-Q9I"/>
+                        <outlet property="keyboardHeightLayoutConstraint" destination="x45-2b-cMt" id="Ij6-cz-LoT"/>
                         <outlet property="kgTextField" destination="u2a-I2-0wR" id="jIy-uE-wqb"/>
                         <outlet property="ounceTextField" destination="Vw5-77-Bss" id="qeu-Tm-a85"/>
                         <outlet property="poundTextField" destination="05W-uE-FzE" id="bPm-TT-GYg"/>
@@ -167,7 +177,7 @@
                                     <constraint firstItem="YG7-5v-Cxj" firstAttribute="centerX" secondItem="OMu-Kw-j7A" secondAttribute="centerX" id="gqD-aG-wt5"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcG-u4-UUl">
+                            <view contentMode="scaleToFill" restorationIdentifier="animateView" translatesAutoresizingMaskIntoConstraints="NO" id="FcG-u4-UUl">
                                 <rect key="frame" x="0.0" y="73" width="375" height="545"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnf-gA-9QQ">
@@ -316,7 +326,7 @@
                                     <constraint firstAttribute="height" constant="73" id="be8-02-xb1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCh-bC-yFI">
+                            <view contentMode="scaleToFill" restorationIdentifier="animateView" translatesAutoresizingMaskIntoConstraints="NO" id="eCh-bC-yFI">
                                 <rect key="frame" x="0.0" y="73" width="375" height="545"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metre per sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InL-u9-Ada">
@@ -446,7 +456,7 @@
                                     <constraint firstItem="VXV-3d-sXN" firstAttribute="centerX" secondItem="xMH-T4-H03" secondAttribute="centerX" id="k8k-Cg-Yu1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5FU-CM-mIa">
+                            <view contentMode="scaleToFill" restorationIdentifier="animateView" translatesAutoresizingMaskIntoConstraints="NO" id="5FU-CM-mIa">
                                 <rect key="frame" x="0.0" y="73" width="375" height="545"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njO-Kt-ZdD">
