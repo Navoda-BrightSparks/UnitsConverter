@@ -27,7 +27,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.37647058820000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="0HR-1a-ePN" firstAttribute="centerY" secondItem="0nO-hb-YPc" secondAttribute="centerY" constant="6" id="1wx-d5-bSt"/>
                                     <constraint firstItem="0HR-1a-ePN" firstAttribute="centerX" secondItem="0nO-hb-YPc" secondAttribute="centerX" id="LFZ-ir-A8P"/>
@@ -127,7 +127,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weight" image="weightTabbaricon" id="acW-dT-cKf">
+                    <tabBarItem key="tabBarItem" title="Weight" image="weightTabbaricon" selectedImage="weightTabbaricon" id="acW-dT-cKf">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -160,7 +160,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.37647058820000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="YG7-5v-Cxj" firstAttribute="centerY" secondItem="OMu-Kw-j7A" secondAttribute="centerY" constant="6" id="E1p-Vv-6Wg"/>
                                     <constraint firstAttribute="height" constant="73" id="XTG-f3-0Z1"/>
@@ -277,7 +277,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZO8-2w-C3G"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Distance" image="distanceTabbarIcon" id="vO8-Qk-fOk"/>
+                    <tabBarItem key="tabBarItem" title="Distance" image="distanceTabbarIcon" selectedImage="distanceTabbarIcon" id="vO8-Qk-fOk"/>
                     <connections>
                         <outlet property="distanceView" destination="FcG-u4-UUl" id="uhY-j4-HhZ"/>
                         <outlet property="footTextField" destination="SEV-bN-Few" id="IUl-Vv-xmH"/>
@@ -309,7 +309,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.37647058820000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="bxM-pH-DIY" firstAttribute="centerY" secondItem="bE4-eH-O4V" secondAttribute="centerY" constant="6" id="79I-yA-M1f"/>
                                     <constraint firstItem="bxM-pH-DIY" firstAttribute="centerX" secondItem="bE4-eH-O4V" secondAttribute="centerX" id="E4r-Z6-dap"/>
@@ -409,9 +409,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dNw-hT-s9k"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Speed" image="speed-1" id="jqM-Uz-zLm">
-                        <color key="badgeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Speed" image="speed-1" selectedImage="speed-1" id="jqM-Uz-zLm"/>
                     <connections>
                         <outlet property="feetPMinTextField" destination="F3H-t4-ZFe" id="hdG-PA-FYk"/>
                         <outlet property="kiloPHourTextField" destination="lgd-69-fOG" id="17e-If-97f"/>
@@ -441,7 +439,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.37647058820000001" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="FOl-x8-gOF"/>
                                     <constraint firstItem="VXV-3d-sXN" firstAttribute="centerY" secondItem="xMH-T4-H03" secondAttribute="centerY" constant="6" id="IkK-GY-X0e"/>
@@ -523,7 +521,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Temperature" image="temperatureTabBarIcon" landscapeImage="temperature" selectedImage="icons8-temperature-30 (1)" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Temperature" image="temperatureTabBarIcon" landscapeImage="temperature" selectedImage="temperatureTabBarIcon" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="celciusTextField" destination="hFY-5u-gts" id="SYk-Ow-KSf"/>
                         <outlet property="fahrenheitTextField" destination="beO-MI-eze" id="Fy8-hO-X36"/>
@@ -544,7 +542,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                        <color key="selectedImageTintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.94901960784313721" green="0.37647058823529411" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -560,7 +558,6 @@
     </scenes>
     <resources>
         <image name="distanceTabbarIcon" width="25" height="25"/>
-        <image name="icons8-temperature-30 (1)" width="30" height="30"/>
         <image name="speed-1" width="25" height="25"/>
         <image name="temperature" width="25" height="25"/>
         <image name="temperatureTabBarIcon" width="25" height="25"/>

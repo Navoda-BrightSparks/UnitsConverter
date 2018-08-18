@@ -165,7 +165,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4312475C211F3F4B00531BA4 /* Build configuration list for PBXProject "Units Converter" */;
+			buildConfigurationList = 4312475C211F3F4B00531BA4 /* Build configuration list for PBXProject "Converter+" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -363,7 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sliit.Units-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,14 +382,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sliit.Units-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4312475C211F3F4B00531BA4 /* Build configuration list for PBXProject "Units Converter" */ = {
+		4312475C211F3F4B00531BA4 /* Build configuration list for PBXProject "Converter+" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43124773211F3F4C00531BA4 /* Debug */,
